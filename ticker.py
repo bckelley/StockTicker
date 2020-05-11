@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 def ticker():
     try:
-        symbols = ['PINS','AAPL','BYND','SNAP']
+        symbols = []
         table = PrettyTable()
         table.field_names = ['Symbol',  'Company Name', 'Price',    'Net Change',   'Percentage Change',    'Indicator']
         for symbol in symbols:
@@ -33,7 +33,7 @@ def ticker():
             
             table.add_row([symbol,  name,   price,  netChange,  perChange,  delta])
 
-        funds = ['AGG', 'SPGM']
+        funds = []
         for fund in funds:
             link = "https://api.nasdaq.com/api/quote/%s/info?assetclass=etf"%(fund)
 
